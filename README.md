@@ -35,9 +35,9 @@ It simplifies authentication, token caching, and request handling, letting you f
 
 3. Add credentials in `.env`:
     ```env
-    GAVABRIDGE_ENV=sandbox
-    GAVABRIDGE_KEY=your_consumer_key
-    GAVABRIDGE_SECRET=your_consumer_secret
+    KRA_ENV=sandbox
+    KRA_CONSUMER_KEY=your_consumer_key
+    KRA_CONSUMER_SECRET=your_consumer_secret
     ```
 
 ---
