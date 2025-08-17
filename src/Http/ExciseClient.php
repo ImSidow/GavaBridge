@@ -1,6 +1,6 @@
 <?php
 
-namespace GavaConnect\Kra\Http;
+namespace GavaBridge\Kra\Http;
 
 class ExciseClient extends BaseClient
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace GavaConnect\Kra\Http;
+namespace GavaBridge\Kra\Http;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;

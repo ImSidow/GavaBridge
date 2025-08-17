@@ -1,10 +1,10 @@
 <?php
 
-namespace GavaConnect\Kra\Http;
+namespace GavaBridge\Kra\Http;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\PendingRequest;
-use GavaConnect\Kra\Support\KraException;
+use GavaBridge\Kra\Support\KraException;
 
 abstract class BaseClient
 {
