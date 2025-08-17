@@ -3,16 +3,38 @@
     "description": "Simple Laravel SDK for KRA (GavaConnect) APIs",
     "type": "library",
     "license": "MIT",
+    "require": {
+        "php": "^8.1|^8.2|^8.3",
+        "illuminate/support": "^10.0|^11.0"
+    },
     "autoload": {
         "psr-4": {
             "Gavabridge\\Kra\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GavaBridge\\Kra\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GavaBridge\\Kra\\Providers\\KraServiceProvider"
+            ],
+            "aliases": {
+                "GavaBridge": "GavaBridge\\Kra\\Facades\\GavaBridge"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest || vendor/bin/phpunit",
+        "lint": "vendor/bin/pint"
     },
     "authors": [
         {
             "name": "ImSidow"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "minimum-stability": "dev"
 }
