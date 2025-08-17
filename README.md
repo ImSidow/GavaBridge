@@ -38,8 +38,6 @@ It simplifies authentication, token caching, and request handling, letting you f
     GAVABRIDGE_ENV=sandbox
     GAVABRIDGE_KEY=your_consumer_key
     GAVABRIDGE_SECRET=your_consumer_secret
-    GAVABRIDGE_TOKEN_URL_SANDBOX=https://sbx.kra.go.ke/oauth/token
-    GAVABRIDGE_API_BASE_SANDBOX=https://sbx.kra.go.ke
     ```
 
 ---
@@ -49,7 +47,7 @@ It simplifies authentication, token caching, and request handling, letting you f
 You can access all endpoints via the **`GavaBridge` facade**:
 
 ```php
-use GavaBridge\Kra\Facades\GavaBridge as Kra;
+use GavaBridge\Kra\Facades\Kra;
 
 // PIN validation
 $result = Kra::pin()->validateByPin('A000000010');
