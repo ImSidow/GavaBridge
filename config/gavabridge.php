@@ -1,42 +1,43 @@
 <?php
 
 return [
-    'env' => env('GAVABRIDGE_ENV', 'sandbox'), // sandbox|production
+    'env' => env('KRA_ENV', 'sandbox'),
 
     'auth' => [
         'sandbox' => [
-            'token_url' => env('GAVABRIDGE_TOKEN_URL_SANDBOX', ''),
-            'api_base'  => env('GAVABRIDGE_API_BASE_SANDBOX', ''),
+            'token_url' => env('KRA_TOKEN_URL_SANDBOX', 'https://sbx.kra.go.ke/oauth/token'),
+            'api_base'  => env('KRA_API_BASE_SANDBOX', 'https://sbx.kra.go.ke'),
         ],
         'production' => [
-            'token_url' => env('GAVABRIDGE_TOKEN_URL_PROD', ''),
-            'api_base'  => env('GAVABRIDGE_API_BASE_PROD', ''),
+            'token_url' => env('KRA_TOKEN_URL_PROD', 'https://api.kra.go.ke/oauth/token'),
+            'api_base'  => env('KRA_API_BASE_PROD', 'https://api.kra.go.ke'),
         ],
-        'key'    => env('GAVABRIDGE_KEY'),
-        'secret' => env('GAVABRIDGE_SECRET'),
-        'scope'  => env('GAVABRIDGE_SCOPE', ''), // if portal requires
+        'key'    => env('KRA_CONSUMER_KEY'),
+        'secret' => env('KRA_CONSUMER_SECRET'),
+        'scope'  => env('KRA_SCOPE', ''), // if required
     ],
 
     'endpoints' => [
-        'pin_validate'    => env('GAVABRIDGE_PIN_VALIDATE', ''),
-        'tcc_validate'    => env('GAVABRIDGE_TCC_VALIDATE', ''),
-        'excise_license'  => env('GAVABRIDGE_EXCISE_LICENSE', ''),
-        'obligations'     => env('GAVABRIDGE_OBLIGATIONS', ''),
-        'liabilities'     => env('GAVABRIDGE_LIABILITIES', ''),
-        'nil_return'      => env('GAVABRIDGE_NIL_RETURN', ''),
+        'pin_validate'  => env('KRA_PIN_VALIDATE_PATH', '/itax/pin/validate-by-pin'),   // e.g. PIN_Validation_by_PIN
+        'tcc_validate'  => env('KRA_TCC_VALIDATE_PATH', '/itax/tcc/validate'),          // KRA-TCC-Validation-Sbx
+        'excise_license' => env('KRA_EXCISE_CHECK_PATH', '/dtd/excise-license/check-by-number'),
+        'obligations'   => env('KRA_OBLIGATIONS_PATH', '/itax/taxpayer/obligations'),
+        'liabilities'   => env('KRA_LIABILITIES_PATH', '/ecitizen/taxpayer/liabilities'),
+        'nil_return'    => env('KRA_NIL_RETURN_PATH', '/itax/returns/nil'),
+
     ],
 
     'http' => [
-        'timeout' => (int) env('GAVABRIDGE_TIMEOUT', 15),
+        'timeout' => (int) env('KRA_TIMEOUT', 15),
         'retry'   => [
-            'times'    => 3,
+            'times' => 3,
             'sleep_ms' => 200,
         ],
     ],
 
     'cache' => [
-        'store' => env('GAVABRIDGE_CACHE_STORE', null), // null = default
-        'key'   => 'gavabridge:token',
+        'store' => env('KRA_CACHE_STORE', null),
+        'key'   => 'kra:token',
         'ttl'   => 3500,
     ],
 ];

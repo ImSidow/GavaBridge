@@ -1,13 +1,13 @@
 <?php
 
-namespace GavaBridge\Kra\Support;
+namespace GavaConnect\Kra\Support;
 
-use GavaBridge\Kra\Http\AuthClient;
-use GavaBridge\Kra\Http\PinClient;
-use GavaBridge\Kra\Http\TccClient;
-use GavaBridge\Kra\Http\ExciseClient;
-use GavaBridge\Kra\Http\TaxpayerClient;
-use GavaBridge\Kra\Http\ReturnsClient;
+use GavaConnect\Kra\Http\AuthClient;
+use GavaConnect\Kra\Http\PinClient;
+use GavaConnect\Kra\Http\TccClient;
+use GavaConnect\Kra\Http\ExciseClient;
+use GavaConnect\Kra\Http\TaxpayerClient;
+use GavaConnect\Kra\Http\ReturnsClient;
 
 class KraManager
 {
