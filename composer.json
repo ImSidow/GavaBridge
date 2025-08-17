@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Gavabridge\\Kra\\": "src/"
+            "GavaBridge\\Kra\\": "src/"
         }
     },
     "autoload-dev": {
@@ -36,5 +36,5 @@
             "name": "ImSidow"
         }
     ],
-    "minimum-stability": "dev"
+    "prefer-stable": true
 }
