@@ -19,9 +19,8 @@ class AuthClient
                 $auth = $this->config['auth'][$env];
                 $resp = Http::asForm()
                     ->withBasicAuth($this->config['auth']['key'], $this->config['auth']['secret'])
-                    ->post($auth['token_url'], [
+                    ->get($auth['token_url'], [
                         'grant_type' => 'client_credentials',
-                        'scope'      => $this->config['auth']['scope'] ?? '',
                     ]);
 
                 if (!$resp->successful()) {
