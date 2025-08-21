@@ -8,9 +8,15 @@
         "php": "^8.1|^8.2|^8.3",
         "illuminate/support": "^10.0|^11.0|^12.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "^10.6",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
     "autoload": {
         "psr-4": {
-            "GavaBridge\\Kra\\": "src/"
+            "GavaBridge\\Kra\\": "src/",
+            "Tests\\": "tests/"
         }
     },
     "autoload-dev": {
@@ -37,5 +43,10 @@
             "name": "ImSidow"
         }
     ],
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }
