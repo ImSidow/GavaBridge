@@ -66,9 +66,12 @@ $lic = Kra::excise()->checkByNumber('EXC-0001234');
 
 // NIL return (payload from portal spec)
 $resp = Kra::returns()->fileNil([
-    'pin' => 'A000000010',
-    'taxHead' => 'VAT',
-    'period' => '2025-07',
+     "TAXPAYERDETAILS" => [
+        "TaxpayerPIN" => "A000000000L",
+        "ObligationCode" => "4",
+        "Month" => "04",
+        "Year" => "2000"
+     ]
     /* ... other fields per API spec ... */
 ]);
 ```

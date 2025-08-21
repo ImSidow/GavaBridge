@@ -13,7 +13,8 @@ it('validates PIN by pin', function () {
         ],
     ];
 
-    Http::fake(['https://sbx.example/checker/v1/pinbypin' => Http::response($expectingRes, 200)]);
+    $cfg = config('gavabridge');
+    Http::fake([$cfg['endpoints']['pin_validate_by_pin'] => Http::response($expectingRes, 200)]);
 
     $res = app(KraManager::class)->pin()->validateByPin('A123456789Z');
     expect($res)->toMatchArray($expectingRes);
@@ -26,8 +27,9 @@ it('validates PIN by ID', function () {
         /* other response param */
     ];
 
-    Http::fake(['https://sbx.example/checker/v1/pin' => Http::response($expectingRes, 200)]);
+    $cfg = config('gavabridge');
+    Http::fake([$cfg['endpoints']['pin_validate_by_id'] => Http::response($expectingRes, 200)]);
 
     $res = app(KraManager::class)->pin()->validateByID('KE', 'A000000000I');
-    expect($res)->toMatchArray($expectingRes);
+    expect($res)->toMatchArray([...$expectingRes]);
 });
