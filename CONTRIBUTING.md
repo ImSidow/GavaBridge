@@ -1,8 +1,8 @@
 ## Local setup
 
-composer install
-composer lint
-composer test
+`composer install`
+`composer lint`
+`composer test`
 
 ## Commit style (recommended)
 
